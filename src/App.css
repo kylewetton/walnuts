@@ -1,5 +1,17 @@
-.App {
-  text-align: center;
+body, html {
+  min-height: 100%;
+  font-size: 14px;
+  color: #252629;
+  margin: 0;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  min-height: 100%;
 }
 
 .App-logo {
@@ -19,4 +31,18 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Times New Roman', Times, serif;
+  color: #A58C5F;
+  font-size: 3em;
+  font-weight: normal;
+  margin-bottom: 2.5rem;
+}
+
+p {
+  margin-bottom: 2.5rem;
+  line-height: 1.75;
+  margin-top: 0;
 }
