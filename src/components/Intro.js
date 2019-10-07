@@ -15,9 +15,9 @@ const Blob = () => {
 
 const BlobSvg = styled.svg`
     z-index: -1;
+    width: 120%;
     position: absolute;
-    top: 0;
-    right: -10%;
+    left: 0;
 `
 
 const Intro = () => {
@@ -30,8 +30,9 @@ const Intro = () => {
           </div>
           <div className="intro-product">
               <img src={w5000} alt="Walnut 5000" />
+              <Blob />
           </div>
-        <Blob />
+        
       </IntroContainer>
     )
 }
@@ -39,6 +40,7 @@ const Intro = () => {
 const IntroContainer = styled.section`
     position: relative;
     max-width: 100%;
+    height: 100vh;
     display: flex;
     > div {
         flex: 1;
@@ -50,7 +52,9 @@ const IntroContainer = styled.section`
         align-items: center;
     }
     .intro-product {
-        transform: translateY(15%);
+        > img {
+            transform: translateY(15%);
+        }
     }
     .intro-content {
         padding-left: 10em;

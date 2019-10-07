@@ -14,7 +14,10 @@ const Header = () => {
     )
 }
 
-const HeaderContainer = styled.div`
+const HeaderContainer = styled.header`
+    position: fixed;
+    top: 0;
+    width: 100%;
     padding: 3.15em;
     display: flex;
     justify-content: space-between;
