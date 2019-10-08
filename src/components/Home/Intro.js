@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import w5000 from '../assets/walnut-5000.png';
-import Button from './Button';
+import w5000 from '../../assets/walnut-5000.png';
+import Button from '../Button';
 
 const Blob = () => {
     return (
@@ -25,7 +25,7 @@ const Intro = () => {
       <IntroContainer>
           <div className="intro-content">
             <h1>Realise your walnut obsession.</h1>
-            <p>There is nothing more fascinating than a walnut. These walnuts are feature rich with chemical goodness that help us in our daily lives. Realise your walnut obsession with the latest Walnut 5000.</p>
+            <p>This is a quirky excerise to design and build a <strong>Reactjs</strong> website. Using React, styled-components and content from Contentful. The repository is available on Github <a href="#">here</a>. I hope you like it!</p>
             <Button text={'Walnut 5000'} href={'#'}/>
           </div>
           <div className="intro-product">

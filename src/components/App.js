@@ -1,14 +1,13 @@
 import React from 'react';
 import '../App.css';
 import Header from './Header.js';
-import Intro from './Intro';
-import OffCanvas from './OffCanvas';
+import Home from './Home/Home';
+
 function App() {
   return (
 <React.Fragment>
     <Header />
-    <Intro />
-    <OffCanvas />
+    <Home />
 </React.Fragment>
   );
 }

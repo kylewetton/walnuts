@@ -46,6 +46,19 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   margin-bottom: 2.5rem;
 }
+h2 {
+  font-size: 2.5em;
+}
+
+a {
+  text-decoration: none;
+  color: #A58C5F;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.5em;
+}
 
 p {
   margin-bottom: 2.5rem;
