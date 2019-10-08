@@ -27,6 +27,7 @@ const BurgerWrapper = styled.div`
     height: 20px;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
     margin-left: 1.75em;
     align-items: flex-end;
     justify-content: ${props => props.isOpen ? 'center' : 'space-between'};
@@ -47,6 +48,14 @@ const BurgerWrapper = styled.div`
     span:nth-child(3) {
         width: ${props => props.isOpen ? '20px' : '8px'};
         transform: ${props => props.isOpen ? 'translateY(-2px) rotate(-45deg);' : 'translateY(0px) rotate(0deg);' }
+    }
+    &:hover {
+        span {
+            width: 20px;
+        }
+        span:nth-child(2) {
+            width: ${props => props.isOpen ? '0px' : '20px'};
+        }
     }
 `
 

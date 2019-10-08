@@ -8,6 +8,13 @@ const HomeSeries = () => {
         <div>
             <h2>Introducing the Walnut Series</h2>
             <h3>Packed with everything your body needs.</h3>
+            <ul>
+                <li>item</li>
+                <li>item</li>
+                <li>item</li>
+                <li>item</li>
+            </ul>
+            <strong>Starting at $249.99</strong>
         </div>
         <div>
             <img src={series} />
@@ -20,6 +27,9 @@ const HomeSeriesContainer = styled.div`
     padding: 7em;
     display: flex;
     * {color: white;}
+    > div {
+        flex: 1;
+    }
 `
 
 export default HomeSeries;
