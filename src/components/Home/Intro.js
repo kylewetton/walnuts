@@ -13,13 +13,6 @@ const Blob = () => {
     )
 }
 
-const BlobSvg = styled.svg`
-    z-index: -1;
-    width: 120%;
-    position: absolute;
-    left: 0;
-`
-
 const Intro = () => {
     return (
       <IntroContainer>
@@ -36,6 +29,13 @@ const Intro = () => {
       </IntroContainer>
     )
 }
+
+const BlobSvg = styled.svg`
+    z-index: -1;
+    width: 120%;
+    position: absolute;
+    left: 0;
+`
 
 const IntroContainer = styled.section`
     position: relative;
