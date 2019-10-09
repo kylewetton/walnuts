@@ -19,10 +19,9 @@ const Menu = props => {
             <NavContainer>
             <Nav>
                 <NavItem active={true}>Shop now</NavItem>
-                <NavItem>Features</NavItem>
                 <NavItem><Link to="/about">About us</Link></NavItem>
             </Nav>
-              <Burger isOpen={props.isOpen} openMenu={() => props.openMenu()} />
+              {/* <Burger isOpen={props.isOpen} openMenu={() => props.openMenu()} /> */}
             </NavContainer>
          </React.Fragment>
         )

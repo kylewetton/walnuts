@@ -39,7 +39,7 @@ class Header extends React.Component {
                 <Logo compact={this.state.compact} />
                 <Menu isOpen={this.state.menuOpen} openMenu={() => this.openMenu()} />
             </HeaderContainer>
-            <OffCanvas open={this.state.menuOpen} />
+            {/* <OffCanvas open={this.state.menuOpen} /> */}
             </React.Fragment>
         )
     }
