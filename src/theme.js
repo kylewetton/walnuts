@@ -1,5 +1,5 @@
 const theme = {
-    colorBrand : "#A58C5F",
+    colorBrand : "#68543B",
     colorBlack : "#252629"
 }
 
