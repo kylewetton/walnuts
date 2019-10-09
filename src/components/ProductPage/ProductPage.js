@@ -12,7 +12,7 @@ let {title, body, price, image} = product[0];
             <ProductContainer>
                 <div className="col-1 image-column">
                     <img className="product-image" alt={title} src={window.location.origin + image} />
-                    <img className="blob" alt={'blob'} src={window.location.origin + '/assets/blob-3.svg'} />
+                    <img className="blob" alt={'blob'} src={window.location.origin + `/assets/blob-${Math.floor((Math.random() * 4) + 1)}.svg`} />
                 </div>
                 <div className="col-2">
                 <h1>{title}</h1>
