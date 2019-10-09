@@ -23,7 +23,7 @@ const Intro = props => {
           <div className="intro-content">
             <h1>{title}</h1>
             <div dangerouslySetInnerHTML={ { __html: content } }></div>
-           <Link to={'/products/walnut-5000'}><Button text={'Walnut 5000'} href={'#'}/></Link>
+           <Button text={'Walnut 5000'} href={'/products/walnut-5000'}/>
           </div>
           <div className="intro-product">
               <img src={'./assets/walnut-5000.png'} alt="Walnut 5000" />
