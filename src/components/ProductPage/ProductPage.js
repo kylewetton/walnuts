@@ -1,23 +1,26 @@
 import React from 'react';
 import {data} from '../../data';
 import styled from 'styled-components';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 const ProductPage = props => {
-let product = data.products.filter(val => val.id === props.match.params.id);
-let {title, body, price, image} = product[0];
+console.log(props.products);
+let product = props.products.filter(val => val.fields.id === props.match.params.id);
+let {name, description, price, image} = product[0].fields;
+description = documentToHtmlString(description);
 
     return (
         <div className="container">
     
             <ProductContainer>
                 <div className="col-1 image-column">
-                    <img className="product-image" alt={title} src={window.location.origin + image} />
+                    <img className="product-image" alt={image.fields.title} src={image.fields.file.url} />
                     <img className="blob" alt={'blob'} src={window.location.origin + `/assets/blob-${Math.floor((Math.random() * 4) + 1)}.svg`} />
                 </div>
                 <div className="col-2">
-                <h1>{title}</h1>
+                <h1>{name}</h1>
                     <h2>${price}</h2>
-                    {body}
+                    <div dangerouslySetInnerHTML={ { __html: description }} />
                 </div>
             </ProductContainer>
         </div>

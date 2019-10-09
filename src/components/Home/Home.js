@@ -8,7 +8,7 @@ const Home = props => {
         <React.Fragment>
             <Intro data={props.data} />
             <HomeSeries />
-            <HomeProducts data={props.products} />
+            <HomeProducts products={props.products} />
         </React.Fragment>
     )
 }

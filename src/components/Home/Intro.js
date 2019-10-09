@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from '../Button';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import {Link} from 'react-router-dom';
 
 const Blob = () => {
     return (
@@ -13,15 +15,15 @@ const Blob = () => {
 }
 
 const Intro = props => {
-    let {title, body} = props.data;
-   
+    let {title, content} = props.data.fields;
+    content = documentToHtmlString(content);
    
     return (
       <IntroContainer>
           <div className="intro-content">
             <h1>{title}</h1>
-            <div dangerouslySetInnerHTML={ { __html: body } }></div>
-            <Button text={'Walnut 5000'} href={'#'}/>
+            <div dangerouslySetInnerHTML={ { __html: content } }></div>
+           <Link to={'/products/walnut-5000'}><Button text={'Walnut 5000'} href={'#'}/></Link>
           </div>
           <div className="intro-product">
               <img src={'./assets/walnut-5000.png'} alt="Walnut 5000" />
@@ -35,6 +37,7 @@ const Intro = props => {
 const BlobSvg = styled.svg`
     z-index: -1;
     width: 120%;
+    transform: translateX(10%);
     position: absolute;
     left: 0;
 `

@@ -3,8 +3,8 @@ import Menu from './Menu';
 import OffCanvas from './OffCanvas';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
+import Logo from './Logo';
 
-const Logo = props => <Link to={'/'}><LogoImg alt="Walnut" src={window.location.origin +'/assets/logo-inline.svg'} compact={props.compact} /></Link>
 
 class Header extends React.Component {
     constructor(props) {
@@ -56,11 +56,6 @@ const HeaderContainer = styled.header`
     transition: 0.25s ease-in-out;
     background: ${props => props.compact ? 'transparent' : 'white'}
     box-shadow: ${props => props.compact ? 'none' : '0px 0px 15px rgba(0,0,0,0.05)'}
-`
-
-const LogoImg = styled.img`
-    transition: 0.25s ease-in-out;
-    height: ${props => props.compact ? '50px' : '35px'};
 `
 
 export default Header;

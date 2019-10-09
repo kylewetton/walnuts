@@ -3,7 +3,7 @@ import ProductCard from '../ProductCard';
 import styled from 'styled-components';
 
 const HomeProducts = props => {
-    let products = props.data.map((val, i) => {
+    let products = props.products.map((val, i) => {
         return <ProductCard key={i} blob={`./assets/blob-${i + 2}.svg`} data={val} /> 
     });
 

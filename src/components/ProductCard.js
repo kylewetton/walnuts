@@ -2,35 +2,33 @@ import React from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 const ProductMeta = props => {
-    return (
-        
-      
+    return (   
         <ProductMetaContainer>
-            <h3 className="title">{props.data.title} </h3>
+            <h3 className="title">{props.data.name} </h3>
            <h3 className="title pad">|</h3>  
             <span className="price">${props.data.price}</span>
         </ProductMetaContainer>  
-        
     )
 }
 
 const ProductCard = props => {
-    let {title, body, price, id, image} = props.data;
+    let {name, content, price, id, image} = props.data.fields;
     return (
        
     <ProductCardWrapper>
          <Link to={'/products/' + id}>
-                <img src={window.location.origin + image} alt={title}/>
-                <ProductMeta data={{title, price}} />
+                <img className="product-image" src={image.fields.file.url} alt={image.fields.file.title}/>
+                <ProductMeta data={{name, price}} />
             </Link>  
             <Blob alt={'blob'} src={props.blob} />
         </ProductCardWrapper>   
         )
 }
 
+
 const ProductMetaContainer = styled.div`
 position: absolute;
-bottom: 6em;
+bottom: 4em;
 display: flex;
     align-items: center;
 .title {
@@ -56,6 +54,9 @@ const ProductCardWrapper = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    .product-image {
+        max-width: 190px;
+    }
 `
 
 const Blob = styled.img`
