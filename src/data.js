@@ -6,7 +6,7 @@ export const data = {
             body  : "This is a quick data test"
         },
         {   page : "home",
-            title : "Realise your walnut obsession.",
+            title : "Realise your walnut obsession updated.",
             body  : "<p>This is a quirky exercise to design and build a <strong>Reactjs</strong> website. Using React, styled-components and content from Contentful. The repository is available on Github <a href='#'>here</a>. I hope you like it!</p>"
         }
     ],
