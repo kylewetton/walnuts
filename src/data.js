@@ -16,21 +16,21 @@ export const data = {
             title : "Walnut 5000",
             price : "699.99",
             body : "Description here for Walnut 5000",
-            image : './assets/walnut.png'
+            image : '/assets/walnut.png'
         },
         {
             id : "walnut-go",
             title : "Walnut GO",
             price : "499.99",
             body : "Description here for Walnut GO",
-            image : './assets/walnut-1.png'
+            image : '/assets/walnut-1.png'
         },
         {
             id : "walnut-slim",
             title : "Walnut Slim",
             price : "249.99",
             body : "Description here for Walnut Slim",
-            image : './assets/walnut-3.png'
+            image : '/assets/walnut-3.png'
         },
     ]
 }

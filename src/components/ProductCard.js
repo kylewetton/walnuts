@@ -20,7 +20,7 @@ const ProductCard = props => {
        
     <ProductCardWrapper>
          <Link to={'/products/' + id}>
-                <img src={image} alt={title}/>
+                <img src={window.location.origin + image} alt={title}/>
                 <ProductMeta data={{title, price}} />
             </Link>  
             <Blob alt={'blob'} src={props.blob} />
