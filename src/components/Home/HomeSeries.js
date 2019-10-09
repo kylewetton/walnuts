@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import theme from '../../theme';
-import series from '../../assets/series.png';
 
 const HomeSeries = () => {
     return (<HomeSeriesContainer>
@@ -17,7 +15,7 @@ const HomeSeries = () => {
             <strong>Starting at $249.99</strong>
         </div>
         <div>
-            <img src={series} />
+            <img alt="The Walnut Series" src={'./assets/series.png'} />
         </div>
     </HomeSeriesContainer>)
 }

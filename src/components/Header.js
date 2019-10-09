@@ -1,11 +1,10 @@
 import React from 'react';
-import logo from '../assets/logo-inline.svg';
 import Menu from './Menu';
 import OffCanvas from './OffCanvas';
-
+import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
-const Logo = props => <LogoImg alt="Walnut" src={logo} compact={props.compact} />
+const Logo = props => <Link to={'/'}><LogoImg alt="Walnut" src={'./assets/logo-inline.svg'} compact={props.compact} /></Link>
 
 class Header extends React.Component {
     constructor(props) {

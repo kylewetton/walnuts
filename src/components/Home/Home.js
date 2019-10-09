@@ -3,12 +3,12 @@ import Intro from './Intro';
 import HomeSeries from './HomeSeries';
 import HomeProducts from './HomeProducts.js';
 
-const Home = () => {
+const Home = props => {
     return (
         <React.Fragment>
-            <Intro />
+            <Intro data={props.data} />
             <HomeSeries />
-            <HomeProducts />
+            <HomeProducts data={props.products} />
         </React.Fragment>
     )
 }

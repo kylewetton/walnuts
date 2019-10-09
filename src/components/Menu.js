@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import theme from '../theme';
+import {Link} from 'react-router-dom';
 
 const Burger = props => {
     return ( 
@@ -14,12 +15,14 @@ const Burger = props => {
 
 const Menu = props => {
         return (
-            <Nav>
+         <React.Fragment>
+                <Nav>
                 <NavItem active={true}>Shop now</NavItem>
                 <NavItem>Features</NavItem>
-                <NavItem>About us</NavItem>
-                <Burger isOpen={props.isOpen} openMenu={() => props.openMenu()} />
+                <NavItem><Link to="/about">About us</Link></NavItem>
             </Nav>
+              <Burger isOpen={props.isOpen} openMenu={() => props.openMenu()} />
+         </React.Fragment>
         )
     }
 
