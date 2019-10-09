@@ -44,3 +44,11 @@ p {
   line-height: 1.75;
   margin-top: 0;
 }
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 140px;
+  padding: 2em;
+}

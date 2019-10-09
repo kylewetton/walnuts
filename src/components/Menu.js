@@ -16,12 +16,14 @@ const Burger = props => {
 const Menu = props => {
         return (
          <React.Fragment>
-                <Nav>
+            <NavContainer>
+            <Nav>
                 <NavItem active={true}>Shop now</NavItem>
                 <NavItem>Features</NavItem>
                 <NavItem><Link to="/about">About us</Link></NavItem>
             </Nav>
               <Burger isOpen={props.isOpen} openMenu={() => props.openMenu()} />
+            </NavContainer>
          </React.Fragment>
         )
     }
@@ -60,6 +62,11 @@ const BurgerWrapper = styled.div`
             width: ${props => props.isOpen ? '0px' : '20px'};
         }
     }
+`
+
+const NavContainer = styled.div`
+    display: flex;
+    align-items: center;
 `
 
 

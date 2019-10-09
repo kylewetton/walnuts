@@ -3,6 +3,7 @@ import '../App.css';
 import Header from './Header.js';
 import Home from './Home/Home';
 import StandardPage from './StandardPage';
+import ProductPage from './ProductPage/ProductPage.js';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import {data} from '../data';
 
@@ -28,8 +29,8 @@ class App extends React.Component {
       <Router>
       <Header />
           <Switch>
-          <Route path="/:page" component={StandardPage}>
-          </Route>
+          <Route path="/products/:id" component={ProductPage} />
+          <Route path="/:page" component={StandardPage} />
           <Route path="/">
           <Home data={homeData[0]} products={productData} />
           </Route>

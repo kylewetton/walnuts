@@ -4,7 +4,7 @@ import OffCanvas from './OffCanvas';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
-const Logo = props => <Link to={'/'}><LogoImg alt="Walnut" src={'./assets/logo-inline.svg'} compact={props.compact} /></Link>
+const Logo = props => <Link to={'/'}><LogoImg alt="Walnut" src={window.location.origin +'/assets/logo-inline.svg'} compact={props.compact} /></Link>
 
 class Header extends React.Component {
     constructor(props) {

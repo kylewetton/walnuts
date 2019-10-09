@@ -19,20 +19,12 @@ class StandardPage extends React.Component {
     render() {
       let {title, body} = this.state.data;
       return (
-        <Container>
+        <div className="container">
           <h1>{title}</h1>
           <p>{body}</p>
-        </Container>
+        </div>
       )
     }
 }
-
-const Container = styled.main`
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  margin-top: 140px;
-  padding: 2em;
-`
 
 export default StandardPage;
