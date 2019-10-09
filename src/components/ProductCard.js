@@ -23,7 +23,7 @@ const ProductCard = props => {
                 <img src={image} alt={title}/>
                 <ProductMeta data={{title, price}} />
             </Link>  
-            <Blob src={props.blob} />
+            <Blob alt={'blob'} src={props.blob} />
         </ProductCardWrapper>   
         )
 }
