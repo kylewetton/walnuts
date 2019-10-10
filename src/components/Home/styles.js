@@ -54,7 +54,17 @@ export const HomeProductsTitle = styled.div`
   h2 {
     margin: 0;
   }
+  @media (max-width: 820px) {
+    padding-bottom: 0;
+  }
 `
 export const HomeProductsContainer = styled.div`
-  display: flex
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  padding: 4em;
+  margin: 0 auto;
+  @media (max-width: 820px) {
+      flex-direction: column;
+  }
 `

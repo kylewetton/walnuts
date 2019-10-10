@@ -7,19 +7,24 @@ export const FooterContainer = styled.footer`
     height: 33vh;
     min-height: 330px;
     display: flex;
+    border-top: 2px solid #F4F1EB;
     > div {
         display: flex;
         flex-direction: column;
         padding: 4em;
-        border-top: 2px solid #F4F1EB;
+        
         flex: 1;
         justify-content: space-between;
     }
     .footer-1 {
         
         align-items: flex-start;
+        button {
+            margin-bottom: 2em;
+        }
         ul {
             margin: 0; padding: 0;
+            margin-bottom: 2em;
             list-style: none;
             li {
                 padding: 0;
@@ -30,10 +35,12 @@ export const FooterContainer = styled.footer`
             border-bottom: 2px solid #68543B;
             padding: 1em 0;
             color: #68543B;
+            width: 100%;
+            max-width: 200px;
         }
     }
     .footer-2 {
-        
+        text-align: center;
         flex: 2;
         align-items: center;
         p {
@@ -41,8 +48,42 @@ export const FooterContainer = styled.footer`
         }
     }
     .footer-3 {
-        
+        text-align: right;
        align-items: flex-end;
+    }
+
+    @media (max-width: 748px) {
+        flex-direction: column;
+        height: auto;
+        min-height: auto;
+        padding: 4em 2em;
+
+        .footer-2 {
+            order: -1;
+            p, img {
+                margin-bottom: 2em;
+            }
+    
+        }
+
+        .footer-1 {
+            input {
+                margin-bottom: 2em;
+            }
+        }
+
+        .footer-3 {
+            > div {
+                margin-bottom: 2em;
+            } 
+        }
+        .footer-1, .footer-2, .footer-3 {
+            
+            text-align: center;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+        }
     }
 `
 
@@ -71,5 +112,28 @@ export const BtnLnk = styled(Link)`
     :hover {
         background: ${theme.colorBrand};
         color: white;
+    }
+`
+
+export const IconsContainer = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    > img {
+        cursor: pointer;
+    }
+`
+
+export const SignOffContainer = styled.div`
+    span, a {
+        display: inline-block;
+        font-size: 0.8rem;
+    }
+    span {
+        margin-left: 1em;
+    }
+    a {
+        opacity: 0.8;
+        text-decoration: underline;
     }
 `

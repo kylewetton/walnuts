@@ -18,7 +18,7 @@ description = documentToHtmlString(description);
                 </div>
                 <div className="col-2">
                 <h1>{name}</h1>
-                    <h2>${price}</h2>
+                    <h4>${price}</h4>
                     <div dangerouslySetInnerHTML={ { __html: description }} />
                     <Button text={'Add to cart'} />
                 </div>

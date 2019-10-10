@@ -57,12 +57,31 @@ const ProductCardWrapper = styled.div`
     .product-image {
         max-width: 190px;
     }
+    @media (max-width: 1230px) {
+     .product-image {
+         max-width: 150px;
+     }
+    }
+    @media (max-width: 820px) {
+        padding: 4em;
+        .product-image {
+            max-width: 190px;
+        };
+    }
 `
 
 const Blob = styled.img`
     position: absolute;
     top: 0; 
     z-index: -1;
+    transition: 0.25s ease-out;
+    @media (max-width: 1230px) {
+        width: 100%;
+    }
+    @media (max-width: 820px) {
+        width: auto;
+        height: 100%;
+    }
 `
 
 export default ProductCard;
