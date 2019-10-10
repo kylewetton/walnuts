@@ -1,7 +1,7 @@
 import React from 'react';
 import Intro from './Intro';
 import HomeSeries from './HomeSeries';
-import HomeProducts from './HomeProducts.js';
+import HomeProducts from './HomeProducts';
 
 const Home = props => {
     return (

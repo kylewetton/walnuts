@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import { HomeSeriesContainer } from './styles'
 
 const HomeSeries = () => {
     return (<HomeSeriesContainer>
@@ -19,15 +19,5 @@ const HomeSeries = () => {
         </div>
     </HomeSeriesContainer>)
 }
-
-const HomeSeriesContainer = styled.div`
-    background: radial-gradient(circle at 100%, rgba(211,183,132,1) 32%, rgba(165,140,95,1) 100%);
-    padding: 7em;
-    display: flex;
-    * {color: white;}
-    > div {
-        flex: 1;
-    }
-`
 
 export default HomeSeries;

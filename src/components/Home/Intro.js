@@ -1,8 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 import Button from '../Button';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
-import {Link} from 'react-router-dom';
+import { BlobSvg, IntroContainer } from './styles';
 
 const Blob = () => {
     return (
@@ -33,43 +32,5 @@ const Intro = props => {
       </IntroContainer>
     )
 }
-
-const BlobSvg = styled.svg`
-    z-index: -1;
-    width: 120%;
-    transform: translateX(10%);
-    position: absolute;
-    left: 0;
-`
-
-const IntroContainer = styled.section`
-    position: relative;
-    max-width: 100%;
-    height: 100vh;
-    display: flex;
-    > div {
-        flex: 1;
-    }
-    .intro-product, .intro-content {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .intro-product {
-        > img {
-            transform: translateY(15%);
-        }
-    }
-    .intro-content {
-        padding-left: 10em;
-        max-width: 50%;
-        flex-direction: column;
-        align-items: flex-start;
-        > p {
-            padding-right: 10em;
-        }
-    }
-`
 
 export default Intro;

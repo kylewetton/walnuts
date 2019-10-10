@@ -1,7 +1,7 @@
 import React from 'react';
 import {data} from '../../data';
-import styled from 'styled-components';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import { ProductContainer } from './styles';
 
 const ProductPage = props => {
 console.log(props.products);
@@ -26,26 +26,5 @@ description = documentToHtmlString(description);
         </div>
     );
 };
-
-const ProductContainer = styled.div`
-display: flex;
-> div {
-    flex: 1;
-}
-.image-column {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-     .blob {
-        width: 100%;
-        position: absolute;
-        z-index: -1;
-    }
-    .product-image {
-        height: 120%;
-    }
-}
-`
 
 export default ProductPage;
