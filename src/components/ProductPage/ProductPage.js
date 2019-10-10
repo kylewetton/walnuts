@@ -1,9 +1,9 @@
 import React from 'react';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { ProductContainer } from './styles';
+import Button from '../Button';
 
 const ProductPage = props => {
-console.log(props.products);
 let product = props.products.filter(val => val.fields.id === props.match.params.id);
 let {name, description, price, image} = product[0].fields;
 description = documentToHtmlString(description);
@@ -20,6 +20,7 @@ description = documentToHtmlString(description);
                 <h1>{name}</h1>
                     <h2>${price}</h2>
                     <div dangerouslySetInnerHTML={ { __html: description }} />
+                    <Button text={'Add to cart'} />
                 </div>
             </ProductContainer>
         </div>

@@ -17,7 +17,7 @@ const Footer = () => {
                 <input type="text" placeholder="Email address..."/>
             </div>
             <div className="footer-2">
-                <img src="./assets/logo-stacked.svg" alt="Walnuts"/>
+                <img src={window.location.origin + '/assets/logo-stacked.svg'} alt="Walnuts"/>
                 <p><strong>Did you know</strong>: It takes about 170 days for a walnut to develop and mature on a tree.</p>
             </div>
             <div className="footer-3">
