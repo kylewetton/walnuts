@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import styled from 'styled-components';
 import '../App.css';
 import Header from './Header.js';
-import Home from './Home/Home';
+import { Home } from './Home';
 import StandardPage from './StandardPage';
-import ProductPage from './ProductPage/ProductPage.js';
+import { ProductPage } from './ProductPage';
 import Logo from './Logo';
 import {data} from '../data';
 

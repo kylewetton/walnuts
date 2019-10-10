@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductCard from '../ProductCard';
-import styled from 'styled-components';
+import { HomeProductsTitle, HomeProductsContainer } from './styles'
 
 const HomeProducts = props => {
     let products = props.products.map((val, i) => {
@@ -18,16 +18,5 @@ const HomeProducts = props => {
      </React.Fragment>
     );
 }
-
-const HomeProductsTitle = styled.div`
-  text-align: center;
-  padding: 4em;
-  h2 {
-    margin: 0;
-  }
-`
-const HomeProductsContainer = styled.div`
-  display: flex
-`
 
 export default HomeProducts;
