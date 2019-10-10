@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import styled from 'styled-components';
 import '../App.css';
 import Header from './Header.js';
+import Footer from './Footer.js';
 import { Home } from './Home';
 import StandardPage from './StandardPage';
 import { ProductPage } from './ProductPage';
 import Logo from './Logo';
-import {data} from '../data';
 
 var contentful = require('contentful');
 
@@ -81,6 +81,7 @@ class App extends React.Component {
           <Home data={homeData[0]} products={productData} />
           </Route>
           </Switch>
+          <Footer />
           </React.Fragment>
       }
         </Router>

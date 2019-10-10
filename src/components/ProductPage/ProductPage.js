@@ -1,5 +1,4 @@
 import React from 'react';
-import {data} from '../../data';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { ProductContainer } from './styles';
 
