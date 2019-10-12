@@ -1,102 +1,98 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import styled from 'styled-components';
-import '../App.css';
-import Header from './Header.js';
-import Footer from './Footer.js';
-import { Home } from './Home';
-import StandardPage from './StandardPage';
-import { ProductPage } from './ProductPage';
-import Logo from './Logo';
+import styled from "styled-components";
+import "../App.css";
+import Header from "./Header.js";
+import Footer from "./Footer.js";
+import { Home } from "./Home";
+import StandardPage from "./StandardPage";
+import { ProductPage } from "./ProductPage";
+import Logo from "./Logo";
+import Cart from "./Cart";
 
-var contentful = require('contentful');
+var contentful = require("contentful");
 
 var client = contentful.createClient({
-  space: 'it264c3hy5de',
-  accessToken: 'TevZpay0vz0xnHNzopNf1oql00W1nex-ItNald-igq8'
-})
+  space: "it264c3hy5de",
+  accessToken: "TevZpay0vz0xnHNzopNf1oql00W1nex-ItNald-igq8"
+});
 
 const Loading = () => {
   return (
-  <LoadingContainer>
-    <Logo />
-  </LoadingContainer>
-  )
-}
+    <LoadingContainer>
+      <Logo type={"stacked"} compact={"true"} />
+    </LoadingContainer>
+  );
+};
 
-class App extends React.Component {
+const App = () => {
+  const [state, setState] = useState({
+    data: {},
+    loading: true,
+    cart: ["walnut-5000", "walnut-slim", "walnut-go"]
+  });
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      data: {},
-      loading: true
-    }
-  }
-
-  componentDidMount() {
-   // Load the data from Contentful
-    client.getEntries()
-    .then(entries => {
+  useEffect(() => {
+    client.getEntries().then(entries => {
       let products, pages;
       products = entries.items.filter(val => {
-        return val.sys.contentType.sys.id === 'product';
+        return val.sys.contentType.sys.id === "product";
       });
       pages = entries.items.filter(val => {
-        return val.sys.contentType.sys.id === 'pages';
+        return val.sys.contentType.sys.id === "pages";
       });
-      let data = {products, pages};
-      // Delay loading slightly to stop flickering of loading
-      
+      let data = { products, pages };
+
       setTimeout(() => {
-        this.setState({data, loading: false});
+        setState({ ...state, data, loading: false });
       }, 1000);
     });
+  }, []);
 
-    
-  }
-
- render() {
-   let homeData, productData;
-   if (Object.entries(this.state.data).length > 0) {
-      homeData = this.state.data.pages.filter(val => val.sys.id === '1P1SmYlX9MgR2UDbXYvsaR');
-      productData = this.state.data.products;
-    }
-   
-    
-    return (
-      <React.Fragment>
-        <Router>
-        
-        {
-          this.state.loading ?
-          <Loading /> : 
-          <React.Fragment>
-          <Header /> 
-          <Switch>
-          <Route path="/products/:id" render={props => <ProductPage {...props} products={productData}/>} />
-          <Route path="/:page" component={StandardPage} />
-          <Route path="/">
-          <Home data={homeData[0]} products={productData} />
-          </Route>
-          </Switch>
-          <Footer />
-          </React.Fragment>
-      }
-        </Router>
-  </React.Fragment>
+  let homeData, productData;
+  if (Object.entries(state.data).length > 0) {
+    homeData = state.data.pages.filter(
+      val => val.sys.id === "1P1SmYlX9MgR2UDbXYvsaR"
     );
+    productData = state.data.products;
   }
- } 
 
- const LoadingContainer = styled.div`
- position: fixed;
- width: 100%;
- height: 100%;
- display: flex;
- justify-content: center;
- align-items: center;
- `
- 
+  return (
+    <React.Fragment>
+      <Router>
+        {state.loading ? (
+          <Loading />
+        ) : (
+          <React.Fragment>
+            <Header />
+            <Switch>
+              <Route
+                path="/products/:id"
+                render={props => (
+                  <ProductPage {...props} products={productData} />
+                )}
+              />
+              <Route path="/:page" component={StandardPage} />
+              <Route path="/">
+                <Home data={homeData[0]} products={productData} />
+              </Route>
+            </Switch>
+            <Cart products={state.data.products} items={state.cart} />
+            <Footer />
+          </React.Fragment>
+        )}
+      </Router>
+    </React.Fragment>
+  );
+};
+
+const LoadingContainer = styled.div`
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export default App;

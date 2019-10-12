@@ -1,11 +1,15 @@
-body, html {
- height: 100%;
+body,
+html {
+  height: 100%;
   font-size: 14px;
   color: #252629;
   margin: 0;
   width: 100%;
 }
-
+@media (max-width: 640px) {
+  body {
+  }
+}
 
 * {
   box-sizing: border-box;
@@ -17,10 +21,13 @@ body, html {
   overflow: hidden;
 }
 
-
-h1, h2, h3, h5, h6 {
-  font-family: 'Times New Roman', Times, serif;
-  color: #68543B;
+h1,
+h2,
+h3,
+h5,
+h6 {
+  font-family: "Times New Roman", Times, serif;
+  color: #68543b;
   font-size: 3em;
   font-weight: normal;
   margin-bottom: 2.5rem;
@@ -36,7 +43,7 @@ h4 {
 
 a {
   text-decoration: none;
-  color: #68543B;
+  color: #68543b;
   font-weight: bold;
 }
 

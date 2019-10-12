@@ -1,61 +1,38 @@
-import React from 'react';
-import Menu from './Menu';
-import OffCanvas from './OffCanvas';
-import {Link} from 'react-router-dom';
-import styled from 'styled-components';
-import Logo from './Logo';
+import React, { useEffect, useState } from "react";
+import Menu from "./Menu";
+import { HeaderContainer } from "./styles";
+import Logo from "./Logo";
 
+const Header = () => {
+  const [state, setState] = useState({
+    menuOpen: false,
+    compact: true
+  });
 
-class Header extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            menuOpen: false,
-            compact: true
-        }
-    }
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+  }, []);
 
-    componentDidMount() {
-        window.addEventListener("scroll", this.handleScroll);
-      }
+  // Toggle menu style
+  const handleScroll = () => {
+    const compact = window.pageYOffset === 0;
+    setState({
+      compact
+    });
+  };
 
-        // Toggle menu style
-    handleScroll = () => {
-        const compact = window.pageYOffset === 0;
-        this.setState({
-        compact
-        });
-    };
+  const openMenu = () => {
+    setState({ menuOpen: !state.menuOpen });
+  };
 
-      
-    openMenu = () => {
-        this.setState({menuOpen: !this.state.menuOpen})
-    }
-
-    render() {
-        return (
-            <React.Fragment>
-                <HeaderContainer compact={this.state.compact}>
-                <Logo compact={this.state.compact} />
-                <Menu isOpen={this.state.menuOpen} openMenu={() => this.openMenu()} />
-            </HeaderContainer>
-            {/* <OffCanvas open={this.state.menuOpen} /> */}
-            </React.Fragment>
-        )
-    }
-}
-
-const HeaderContainer = styled.header`
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 50;
-    padding: ${props => props.compact ? '3.15em' : '1.5em'};
-    display: flex;
-    justify-content: space-between;
-    transition: 0.25s ease-in-out;
-    background: ${props => props.compact ? 'transparent' : 'white'}
-    box-shadow: ${props => props.compact ? 'none' : '0px 0px 15px rgba(0,0,0,0.05)'}
-`
+  return (
+    <React.Fragment>
+      <HeaderContainer compact={state.compact}>
+        <Logo compact={state.compact} type={"inline"} />
+        <Menu isOpen={state.menuOpen} openMenu={() => openMenu()} />
+      </HeaderContainer>
+    </React.Fragment>
+  );
+};
 
 export default Header;

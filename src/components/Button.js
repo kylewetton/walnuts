@@ -1,9 +1,8 @@
-import React from 'react';
-import {BtnLnk, Btn} from './styles';
+import React from "react";
+import { BtnLnk, Btn } from "./styles";
 
-const Button = props => {
-    return props.to ? <BtnLnk to={props.href}>{props.text}</BtnLnk> : <Btn>{props.text}</Btn>
-    
-}
+const Button = ({ href, text }) => {
+  return href ? <BtnLnk to={href}>{text}</BtnLnk> : <Btn>{text}</Btn>;
+};
 
 export default Button;
