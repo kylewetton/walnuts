@@ -29,7 +29,7 @@ const App = () => {
   const [state, setState] = useState({
     data: {},
     loading: true,
-    cart: ["walnut-5000", "walnut-slim", "walnut-go"]
+    cart: []
   });
 
   useEffect(() => {
@@ -57,6 +57,20 @@ const App = () => {
     productData = state.data.products;
   }
 
+  const onAddToCart = id => {
+    let cart = state.cart;
+    if (!cart.includes(id)) {
+      cart.push(id);
+    }
+    setState({ ...state, cart });
+  };
+
+  const onDeleteFromCart = id => {
+    let cart = state.cart;
+    cart = cart.filter(val => val !== id);
+    setState({ ...state, cart });
+  };
+
   return (
     <React.Fragment>
       <Router>
@@ -69,7 +83,11 @@ const App = () => {
               <Route
                 path="/products/:id"
                 render={props => (
-                  <ProductPage {...props} products={productData} />
+                  <ProductPage
+                    {...props}
+                    onAddToCart={onAddToCart}
+                    products={productData}
+                  />
                 )}
               />
               <Route path="/:page" component={StandardPage} />
@@ -77,7 +95,11 @@ const App = () => {
                 <Home data={homeData[0]} products={productData} />
               </Route>
             </Switch>
-            <Cart products={state.data.products} items={state.cart} />
+            <Cart
+              products={state.data.products}
+              items={state.cart}
+              onDeleteItem={onDeleteFromCart}
+            />
             <Footer />
           </React.Fragment>
         )}

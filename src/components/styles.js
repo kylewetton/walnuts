@@ -163,23 +163,64 @@ export const HeaderContainer = styled.header`
       props.compact ? "none" : "0px 0px 15px rgba(0,0,0,0.05)"}
 `;
 
+export const CartButtons = styled.div`
+  display: flex;
+  width: 100%;
+  ${Btn} {
+    flex: 1;
+    margin: 0;
+    width: 100%;
+    display: block;
+    border: none;
+  }
+  ${Btn}:first-child {
+    background: ${theme.colorBrand};
+    color: white;
+  }
+  ${Btn}:last-child:hover {
+    background: #eeeeee;
+    color: ${theme.colorBrand};
+  }
+`;
+
+export const StyledDeleteCartItem = styled.div`
+  width: 12px;
+  height: 12px;
+  svg {
+    height: 100%;
+  }
+`;
+
 export const CartContainer = styled.div`
   position: fixed;
   bottom: 4em;
   right: 4em;
   background: white;
-  padding: 1em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   border-radius: 0.25em;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.33);
   z-index: 20;
   .cart-icon {
     height: 20px;
+    width: 24px;
     path {
       stroke: ${theme.colorBrand};
+    }
+  }
+  .lineitem-wrapper {
+    margin: 0.5em 0;
+  }
+  .cart-padding {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &.--is-hidden {
+    .lineitem-wrapper,
+    ${CartButtons} {
+      display: none;
     }
   }
 `;
