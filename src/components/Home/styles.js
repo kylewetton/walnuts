@@ -85,12 +85,21 @@ export const HomeSeriesContainer = styled.div`
   }
   > div {
     flex: 1;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:first-child {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 `;
 
 export const HomeProductsTitle = styled.div`
   text-align: center;
   padding: 4em;
+  padding-top: 0;
   h2 {
     margin: 0;
   }
